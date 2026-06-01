@@ -1,6 +1,6 @@
-import { PhoneFull } from "../types/PhoneFull";
-import { PhoneShort } from "../types/PhoneShort";
-import { ProductBase } from "../types/ProductBase";
+import { PhoneFull } from '../types/PhoneFull';
+import { PhoneShort } from '../types/PhoneShort';
+import { ProductBase } from '../types/ProductBase';
 
 export function mapToProductBase(product: PhoneFull | PhoneShort): ProductBase {
   return {

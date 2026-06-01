@@ -34,6 +34,7 @@ export const ProductCard: React.FC<Props> = ({
     ...product,
     id: String(product.itemId), // Тепер id буде рядком 'apple-iphone-11'
   };
+
   return (
     <div className="card">
       <Link

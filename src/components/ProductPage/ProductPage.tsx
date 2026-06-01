@@ -40,6 +40,7 @@ export const ProductPage = () => {
   if (!product || !itemId) {
     return <NotFoundPage />;
   }
+
   const recommended = products.filter(p => p.id !== product.id).slice(0, 10);
   const visibleCount = 4;
   const maxIndex = Math.max(recommended.length - visibleCount, 0);
@@ -57,7 +58,6 @@ export const ProductPage = () => {
     );
 
     if (newProduct) {
-
       navigate(`/${newProduct.category}/${newProduct.id}`, { replace: true });
     }
   };
@@ -74,13 +74,13 @@ export const ProductPage = () => {
       navigate(`/${newProduct.category}/${newProduct.id}`, { replace: true });
     }
   };
+
   const productForFav: ProductBase = {
     ...mapToProductBase(product),
     id: commonId,
   };
   const { toggle, isFavourite } = useFavourites();
   const { addToCart, removeFromCart, isInCart } = useCart();
-
 
   const isItemFavourite = isFavourite(commonId);
   const cartKey = commonId;
@@ -95,6 +95,7 @@ export const ProductPage = () => {
     capacity: product.capacity,
     color: product.color,
   };
+
   return (
     <div className="productPage" key={product.id}>
       <div className="container">

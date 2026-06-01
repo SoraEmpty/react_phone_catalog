@@ -27,6 +27,7 @@ export const FavouritesProvider = ({
 }) => {
   const [items, setItems] = useState<ProductBase[]>(() => {
     const saved = localStorage.getItem('favourites');
+
     return saved ? JSON.parse(saved) : [];
   });
 
@@ -41,8 +42,6 @@ export const FavouritesProvider = ({
         : [...prev, product],
     );
   };
-
-
 
   const isFavourite = (id: string) =>
     items.some(p => String(p.id) === String(id));

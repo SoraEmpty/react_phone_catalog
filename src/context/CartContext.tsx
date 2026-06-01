@@ -88,6 +88,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const isInCart = (id: string) => items.some(i => i.id === id);
   const cartCount = totalCount;
+
   return (
     <CartContext.Provider
       value={{

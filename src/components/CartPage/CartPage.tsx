@@ -44,11 +44,15 @@ export const CartPage = () => {
             {items.map(item => {
               const { product } = item;
               const image = product.images[0];
-              const currentPrice = Number(product.priceDiscount || product.price || 0);
+              const currentPrice = Number(
+                product.priceDiscount || product.price || 0,
+              );
               const itemTotalPrice = currentPrice * item.quantity;
-              const imagePath = product.images && product.images.length > 0
-                ? product.images[0]
-                : 'img/default-product.png';
+              const imagePath =
+                product.images && product.images.length > 0
+                  ? product.images[0]
+                  : 'img/default-product.png';
+
               return (
                 <div className="cartPage__item" key={item.id}>
                   <button
@@ -89,9 +93,7 @@ export const CartPage = () => {
                     <button onClick={() => increase(item.id)}>+</button>
                   </div>
 
-                  <div className="cartPage__itemPrice">
-                    ${itemTotalPrice}
-                  </div>
+                  <div className="cartPage__itemPrice">${itemTotalPrice}</div>
                 </div>
               );
             })}

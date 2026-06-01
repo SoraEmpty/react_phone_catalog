@@ -88,7 +88,9 @@ export const Header = () => {
 
                 <Link to="/cart" className="header_cart">
                   <img src="img/Store_Header.svg" alt="store" />
-                  {cartCount > 0 && <span className="header__badge">{cartCount}</span>}
+                  {cartCount > 0 && (
+                    <span className="header__badge">{cartCount}</span>
+                  )}
                 </Link>
               </div>
 
